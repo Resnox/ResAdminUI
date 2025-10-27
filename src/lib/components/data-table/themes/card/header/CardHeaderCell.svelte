@@ -1,0 +1,17 @@
+<script lang="ts">
+	import type { GridHeaderCellProps } from '$lib/components/data-table/props.js';
+
+	let {
+		title = '',
+		onclick = () => {},
+		sortable = false,
+		children
+	}: GridHeaderCellProps = $props();
+</script>
+
+<button class="p-2 flex-auto transition hover:bg-gray-700" {onclick}>
+	<span class="flex flex-row items-center gap-1">
+		{title}
+		{@render children?.()}
+	</span>
+</button>
